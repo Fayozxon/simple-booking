@@ -1,0 +1,257 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Red+Hat+Display:wght@500;700;900&family=Rubik:wght@400;500;700&display=swap');
+
+/* Core Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: #fafafa;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 80%;
+    border-radius: 0 0 225px 225px;
+    background: linear-gradient(to bottom left, #ce41ff, #913afe);
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 450px;
+    height: 80%;
+    border-radius: 225px 225px 0 0;
+    background: hsl(270, 20%, 96%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Info Text Styles */
+
+.info {
+    width: 450px;
+    padding-left: 90px;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.info h2 {
+    color: #3e2a52;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.info p {
+    color: #afacb1;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+/* Phone Styles */
+
+.phone {
+    margin-top: 30px;
+    position: relative;
+    width: 330px;
+    height: 600px;
+    border: 15px solid #fff;
+    background: #f5f3f8;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.phone::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 20px;
+    border-radius: 0 0 15px 15px;
+    background: #fff;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    border-radius: 8px;
+    background: linear-gradient(to left, #ce41ff, #913afe);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header .back-button {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.header .left {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img {
+    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.header h2 {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1em;
+}
+
+.header h2 span {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #ede5f4;
+}
+
+.header .more-button {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.5rem;
+    transform: rotate(-90deg) translateX(-10px);
+    cursor: pointer;
+}
+
+.contents {
+    padding-top: 100px;
+}
+
+.contents .images {
+    display: flex;
+    position: relative;
+    right: -30%;
+    padding: 5px 0;
+}
+
+.images img {
+    width: 60px;
+    border-radius: 20px;
+    margin: 0 2px;
+}
+
+.contents .left {
+    background: #efe4f4;
+    color: #c241fe;
+    font-size: 13px;
+    border-radius: 20px;
+    border-bottom-left-radius: 5px;
+    width: 70%;
+    padding: 10px 20px;
+    margin: 10px 5px;
+}
+
+.contents .right {
+    background: #fff;
+    font-size: 13px;
+    border-radius: 20px;
+    border-bottom-right-radius: 5px;
+    width: 70%;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    position: relative;
+    right: -25%;
+}
+
+.input {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: lighter;
+    background: #fff;
+    line-height: 40px;
+    cursor: text;
+}
+
+.input span {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    background: #402855;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.input span::before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    width: 7px;
+    height: 7px;
+    border: 4px solid #fff;
+    transform: rotate(45deg);
+    border-left: none;
+    border-bottom: none;
+}
+
+/* Phone Animation */
+
+@keyframes reveal {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.contents > p, .contents > div {
+    animation: reveal 0.5s linear;
+}
